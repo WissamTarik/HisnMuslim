@@ -22,10 +22,11 @@ export async function getHadithsActions(
     if (keyword) target.searchParams.set("searchArabic", keyword)
 
     try {
-        const response = await fetch(target.toString(), { cache: "no-store" })
+        const response = await fetch(target.toString(), {
+            next: { revalidate: 86400 }
+        })
         if (!response.ok) return null
-        const json = await response.json()
-        return json
+        return await response.json()
     } catch (error) {
         return null
     }
