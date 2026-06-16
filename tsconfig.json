@@ -19,8 +19,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "@data/*":["./data/*"],
+      "@actions/*":["./actions/*"],
+      "@utils/*":["./utils/*"],
+      "@hooks/*":["./hooks/*"],
+      "@constants/*":["./constants/*"],
+      "@skeletons/*":["./skeletons/*"],
+    },
+    
   },
   "include": [
     "next-env.d.ts",
@@ -30,5 +37,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
+  
   "exclude": ["node_modules"]
 }

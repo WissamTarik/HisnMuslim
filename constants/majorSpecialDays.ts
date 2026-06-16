@@ -1,0 +1,1 @@
+export const MAJOR_KEYWORDS = ["Ashura", "Mawlid", "Ramadan", "Eid", "Arafa", "Hajj", "Miraj", "Bara'at"];
