@@ -14,7 +14,7 @@ export async function getHadithsActions(
 ): Promise<THadithApiResponse | null> {
 
     // الحل السحري لـ Vercel: إذا كنا على سيرفر فيرسيل، نستخدم الرابط المحلي الداخلي للسيرفر 127.0.0.1 أو VERCEL_URL الأصلي
-    const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : APP_URL
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL}` : APP_URL
     const target = new URL(`${baseUrl}/api/hadith`)
 
     target.searchParams.set("book", book)
@@ -45,7 +45,7 @@ export async function getHadithsActions(
 }
 
 export async function getHadithByNumber(hadithNumber: string, book: string) {
-    const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : APP_URL
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL}` : APP_URL
 
     try {
         const res = await fetch(
